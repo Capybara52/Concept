@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bkfawmqx2jq6q"]
+
+[ext_resource type="Texture2D" uid="uid://brnbllupxh0yd" path="res://ASSETS/PLAYERIDLETRUE.png" id="1_c280d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in2tq"]
+atlas = ExtResource("1_c280d")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h5tw"]
+atlas = ExtResource("1_c280d")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08g3q"]
+atlas = ExtResource("1_c280d")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiina"]
+atlas = ExtResource("1_c280d")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yev2l"]
+atlas = ExtResource("1_c280d")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ejnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in2tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h5tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08g3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiina")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yev2l")
+}],
+"loop": 1,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hllg"]
+radius = 22.0
+height = 102.0
+
+[node name="GAMESCENE" type="Node2D" unique_id=1728109143]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1690829562]
+
+[node name="PLAYER" type="CharacterBody2D" parent="." unique_id=1110498962]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PLAYER" unique_id=350403525]
+position = Vector2(9, -2)
+sprite_frames = SubResource("SpriteFrames_8ejnu")
+animation = &"IDLE"
+autoplay = "IDLE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLAYER" unique_id=1715247056]
+position = Vector2(12, -3)
+shape = SubResource("CapsuleShape2D_8hllg")

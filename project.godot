@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Silver"
+run/main_scene="uid://bkfawmqx2jq6q"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
